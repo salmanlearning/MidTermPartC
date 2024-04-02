@@ -60,7 +60,33 @@ public class UserProfile
     public void setGenre(String genre) {
         this.genre = genre;
     }
-    
+
+    import java.util.Scanner;
+
+public class TestUserProfile {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to OnlineVids!");
+        System.out.print("Enter your name: ");
+        String userName = scanner.nextLine();
+
+        System.out.println("Choose your favorite genre:");
+        String[] genres = {"Comedy", "Drama", "Action", "Mystery"};
+        for (int i = 0; i < genres.length; i++) {
+            System.out.println((i + 1) + ". " + genres[i]);
+        }
+
+        System.out.print("Enter the number corresponding to your favorite genre: ");
+        int choice = scanner.nextInt();
+        scanner.close();
+
+        String selectedGenre = genres[choice - 1];
+        UserProfile userProfile = new UserProfile(userName, selectedGenre);
+
+        System.out.println("Your userProfile was created successfully!");
+    }
+}
     
     
     
